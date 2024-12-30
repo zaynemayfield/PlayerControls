@@ -1,0 +1,7 @@
+<Bindings>
+    <!-- Define the keybinding and associate it with a Lua function -->
+    <Script file="PlayerControls.lua" />
+    <Binding name="Cycle Speed" header="PLAYER_CONTROLS">
+        SpeedControl_Cycle()
+    </Binding>
+</Bindings>

@@ -1,0 +1,9 @@
+## Interface: 30300
+## Title: Player Controls
+## Notes: An addon designed to work with mod-player-control an Azerothcore Module.
+## Author: Zayne
+## Version: 1.0
+
+TeleportLocations.lua
+PlayerControls.lua
+Bindings.xml
