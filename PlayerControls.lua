@@ -24,14 +24,14 @@ local speedCommands = { "s1", "s2", "s3", "s4", "s5" }
 local currentSpeedIndex = 1
 
 -- Function to increase speed
-local function IncreaseSpeed()
+function IncreaseSpeed()
     currentSpeedIndex = math.min(currentSpeedIndex + 1, #speedCommands)
     local command = speedCommands[currentSpeedIndex]
     SendChatMessage(command, "SAY")
 end
 
 -- Function to decrease speed
-local function DecreaseSpeed()
+function DecreaseSpeed()
     currentSpeedIndex = math.max(currentSpeedIndex - 1, 1)
     local command = speedCommands[currentSpeedIndex]
     SendChatMessage(command, "SAY")

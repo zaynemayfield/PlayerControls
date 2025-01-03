@@ -4,4 +4,10 @@
     <Binding name="Cycle Speed" header="PLAYER_CONTROLS">
         SpeedControl_Cycle()
     </Binding>
+    <Binding name="Increase Speed" header="PLAYER_CONTROLS">
+        IncreaseSpeed()
+    </Binding>
+    <Binding name="Decrease Speed" header="PLAYER_CONTROLS">
+        DecreaseSpeed()
+    </Binding>
 </Bindings>
