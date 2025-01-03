@@ -130,7 +130,7 @@ end)
 local inputBox = CreateFrame("EditBox", "TeleportInputBox", largeFrame, "InputBoxTemplate")
 inputBox:SetSize(250, 30)
 inputBox:SetPoint("TOP", largeFrame, "TOP", 0, -30)
-inputBox:SetAutoFocus(false)
+inputBox:SetAutoFocus(true)
 
 -- Scroll frame for teleport locations
 local scrollFrame = CreateFrame("ScrollFrame", "TeleportScrollFrame", largeFrame, "UIPanelScrollFrameTemplate")
@@ -194,6 +194,14 @@ end
 inputBox:SetScript("OnTextChanged", function(self)
     local searchText = self:GetText():lower()
     UpdateTeleportList(searchText)
+end)
+
+-- Handle Enter key to teleport to the first location in the list
+inputBox:SetScript("OnEnterPressed", function(self)
+    if locationButtons[1] and locationButtons[1]:IsShown() then
+        -- Execute the OnClick script of the first button
+        locationButtons[1]:GetScript("OnClick")()
+    end
 end)
 
 UpdateTeleportList("") -- Populate initially
@@ -349,7 +357,7 @@ end
 local tfInputBox = CreateFrame("EditBox", "TFFriendInputBox", tfFrame, "InputBoxTemplate")
 tfInputBox:SetSize(250, 30)
 tfInputBox:SetPoint("TOP", tfFrame, "TOP", 0, -40)
-tfInputBox:SetAutoFocus(false)
+tfInputBox:SetAutoFocus(true)
 tfInputBox:SetScript("OnTextChanged", function(self)
     local text = self:GetText() or ""
     PopulateFriendList(text)
